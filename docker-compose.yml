@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nearme_locations:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    ports:
+      - 8080:8080
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CMNXT_LOCATION_DB_CONN_STR
+      - CMNXT_LOCATION_TABLE_NAME
